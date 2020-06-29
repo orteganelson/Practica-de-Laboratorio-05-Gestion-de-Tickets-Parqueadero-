@@ -68,7 +68,7 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
         btnBuscar.setText(recurso.getString("btnBuscar"));
         btnFactura.setText(recurso.getString("btnFactura"));
         btnLimpiar.setText(recurso.getString("btnLimpiar"));
-        btnAtras.setText(recurso.getString("btnAtras"));
+        
     }
 
     public void ponerFecha() {
@@ -144,11 +144,12 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
         btnBuscar = new javax.swing.JButton();
         btnFactura = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
-        btnAtras = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSalidaTicket = new javax.swing.JTable();
 
-        labelEscribaNumeroTicked.setText("Escriba el número del ticket:");
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        labelEscribaNumeroTicked.setText("Nro. de Ticket:");
 
         labelFechaDeEntrada.setText("Fecha de entrada:");
 
@@ -156,16 +157,16 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
 
         labelTotalParqueo.setText("Tiempo de parqueo:");
 
-        labelTotalPagar.setText("Total a pagar:");
+        labelTotalPagar.setText("Valor a pagar:");
 
         txtFechaEntrada.setEditable(false);
-        txtFechaEntrada.setBackground(new java.awt.Color(153, 153, 153));
+        txtFechaEntrada.setBackground(new java.awt.Color(255, 255, 255));
 
         txtFechaSalida.setEditable(false);
-        txtFechaSalida.setBackground(new java.awt.Color(153, 153, 153));
+        txtFechaSalida.setBackground(new java.awt.Color(255, 255, 255));
 
         txtTiempo.setEditable(false);
-        txtTiempo.setBackground(new java.awt.Color(153, 153, 153));
+        txtTiempo.setBackground(new java.awt.Color(255, 255, 255));
         txtTiempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTiempoActionPerformed(evt);
@@ -173,7 +174,7 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
         });
 
         txtPago.setEditable(false);
-        txtPago.setBackground(new java.awt.Color(153, 153, 153));
+        txtPago.setBackground(new java.awt.Color(255, 255, 255));
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -182,8 +183,8 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
             }
         });
 
-        btnFactura.setText("Emitir Factura");
-        btnFactura.setEnabled(false);
+        btnFactura.setBackground(new java.awt.Color(255, 255, 255));
+        btnFactura.setText("Factura");
         btnFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFacturaActionPerformed(evt);
@@ -197,19 +198,12 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
             }
         });
 
-        btnAtras.setText("Regresar");
-        btnAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasActionPerformed(evt);
-            }
-        });
-
         tblSalidaTicket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Cliente", "Cédula", "Placa", "Marca", "Modelo"
+                "Nombre del Cliente", "Cédula", "Placa", "Marca", "Modelo"
             }
         ) {
             Class[] types = new Class [] {
@@ -234,53 +228,46 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(labelEscribaNumeroTicked)
+                            .addGap(64, 64, 64)
+                            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPago, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(102, 102, 102)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelTotalPagar)
-                                    .addComponent(labelTotalParqueo)
-                                    .addComponent(labelFechaDeSalida)
-                                    .addComponent(labelFechaDeEntrada)
-                                    .addComponent(labelEscribaNumeroTicked))
-                                .addGap(72, 72, 72)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtPago, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                    .addComponent(txtFechaEntrada)
-                                    .addComponent(txtNumero)
-                                    .addComponent(txtFechaSalida)
-                                    .addComponent(txtTiempo)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addComponent(btnBuscar)
-                                .addGap(38, 38, 38)
-                                .addComponent(btnFactura)
-                                .addGap(50, 50, 50)
-                                .addComponent(btnLimpiar)))
-                        .addGap(105, 165, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAtras))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnBuscar)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelTotalPagar)
+                                .addComponent(labelTotalParqueo)
+                                .addComponent(labelFechaDeEntrada)
+                                .addComponent(labelFechaDeSalida)))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnFactura)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimpiar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelEscribaNumeroTicked)
                     .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFechaDeEntrada)
                     .addComponent(txtFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelFechaDeSalida)
                     .addComponent(txtFechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -289,20 +276,17 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
                     .addComponent(labelTotalParqueo)
                     .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTotalPagar)
                     .addComponent(txtPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnBuscar)
-                        .addComponent(btnFactura))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscar)
+                    .addComponent(btnFactura)
                     .addComponent(btnLimpiar))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAtras)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -370,11 +354,6 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         limpiar();
     }//GEN-LAST:event_btnLimpiarActionPerformed
-
-    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        limpiar();
-        this.hide();
-    }//GEN-LAST:event_btnAtrasActionPerformed
    
     public void limpiar() {
         txtNumero.setText("");
@@ -392,7 +371,6 @@ public class VentanaSalidaTicket extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnFactura;
     private javax.swing.JButton btnLimpiar;

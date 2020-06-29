@@ -79,8 +79,8 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
         btnBuscar.setText(recurso.getString("btnBuscar"));
         btnEmitir.setText(recurso.getString("btnEmitir"));
         btnLimpiar.setText(recurso.getString("btnLimpiar"));
-        btnAtras.setText(recurso.getString("btnAtras"));
-        labelMensajeSeleccion.setText(recurso.getString("labelMensajeSeleccion"));
+       // btnAtras.setText(recurso.getString("btnAtras"));
+      
 
     }
 
@@ -194,10 +194,9 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
         btnBuscar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnEmitir = new javax.swing.JButton();
-        labelMensajeSeleccion = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblInformacion = new javax.swing.JTable();
-        btnAtras = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -224,10 +223,10 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
         labelParametroBusqueda.setText("Buscar por:");
 
         txtNumero.setEditable(false);
-        txtNumero.setBackground(new java.awt.Color(153, 153, 153));
+        txtNumero.setBackground(new java.awt.Color(255, 255, 255));
 
         txtFechaEntrada.setEditable(false);
-        txtFechaEntrada.setBackground(new java.awt.Color(153, 153, 153));
+        txtFechaEntrada.setBackground(new java.awt.Color(255, 255, 255));
 
         radiobtnCedula.setText("Cédula");
         radiobtnCedula.addActionListener(new java.awt.event.ActionListener() {
@@ -243,9 +242,10 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
             }
         });
 
-        labelSeleccioneParametro.setText("Seleccione Parámetro");
+        labelSeleccioneParametro.setText("Ingrese cédula/placa");
 
         txtFormatedParametro.setEditable(false);
+        txtFormatedParametro.setBackground(new java.awt.Color(255, 255, 255));
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -279,25 +279,28 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(btnBuscar)
-                        .addGap(30, 30, 30)
-                        .addComponent(btnEmitir)
-                        .addGap(27, 27, 27)
-                        .addComponent(btnLimpiar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelNumero)
-                            .addComponent(labelParametroBusqueda)
-                            .addComponent(labelSeleccioneParametro))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnEmitir)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(labelNumero)
+                                .addComponent(labelSeleccioneParametro)))
                         .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnLimpiar)
+                                .addGap(30, 30, 30)
+                                .addComponent(btnBuscar))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtFechaEntrada)
+                                .addComponent(txtNumero)
+                                .addComponent(txtFormatedParametro, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelParametroBusqueda)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(radiobtnPlaca)
-                            .addComponent(txtFechaEntrada)
-                            .addComponent(txtNumero)
-                            .addComponent(radiobtnCedula)
-                            .addComponent(txtFormatedParametro, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                            .addComponent(radiobtnCedula))))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,12 +314,12 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
                     .addComponent(labelFechaEntrada)
                     .addComponent(txtFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelParametroBusqueda)
                     .addComponent(radiobtnCedula))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radiobtnPlaca)
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelSeleccioneParametro)
                     .addComponent(txtFormatedParametro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -328,14 +331,12 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        labelMensajeSeleccion.setText("Seleccione un vehículo");
-
         tblInformacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Cliente", "Cédula", "Placa", "Marca", "Modelo"
+                "Nombre Cliente", "Cédula", "Placa", "Marca", "Modelo"
             }
         ) {
             Class[] types = new Class [] {
@@ -355,46 +356,30 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tblInformacion);
 
-        btnAtras.setText("Regresar");
-        btnAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("Asignación de Tickets");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAtras)
-                        .addGap(69, 69, 69)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelMensajeSeleccion, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel1)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(25, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAtras)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(labelMensajeSeleccion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
@@ -458,7 +443,7 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
                         this.hide();
                     }
                 } else {
-                    labelMensajeSeleccion.setEnabled(true);
+                    //labelMensajeSeleccion.setEnabled(true);
                     llenartblInformacion(c);
                     btnEmitir.setEnabled(true);
                 }
@@ -472,7 +457,7 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
                     }
                 } else {
                     Cliente c = controladorCliente.buscarPorVehiculo(v.getPlaca());
-                    labelMensajeSeleccion.setEnabled(true);
+                    //labelMensajeSeleccion.setEnabled(true);
                     llenartblInformacionPorPlaca(c, v);
                     btnEmitir.setEnabled(true);
                 }
@@ -507,11 +492,6 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
         limpiar();
         ponerFecha();
     }//GEN-LAST:event_btnLimpiarActionPerformed
-
-    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        limpiar();
-        this.hide();
-    }//GEN-LAST:event_btnAtrasActionPerformed
     public void limpiar() {
         labelSeleccioneParametro.setText("Seleccione parámetro:");
         btnGroupBuscar.clearSelection();
@@ -526,15 +506,14 @@ public class VentanaRegistrarTicket extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEmitir;
     private javax.swing.ButtonGroup btnGroupBuscar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelFechaEntrada;
-    private javax.swing.JLabel labelMensajeSeleccion;
     private javax.swing.JLabel labelNumero;
     private javax.swing.JLabel labelParametroBusqueda;
     private javax.swing.JLabel labelSeleccioneParametro;

@@ -60,7 +60,7 @@ public class VentanaRegistrarCliente extends javax.swing.JInternalFrame {
         labelCallePrincipal.setText(recurso.getString("labelCallePrincipal"));
         labelCalleSecundaria.setText(recurso.getString("labelCalleSecundaria"));
         btnCrear.setText(recurso.getString("btnCrear"));
-        btnAtras.setText(recurso.getString("btnAtras"));
+       
 
     }
 
@@ -163,7 +163,6 @@ public class VentanaRegistrarCliente extends javax.swing.JInternalFrame {
         txtCalleSecundaria = new javax.swing.JTextField();
         txtFormattedNumeroCasa = new javax.swing.JFormattedTextField();
         btnCrear = new javax.swing.JButton();
-        btnAtras = new javax.swing.JButton();
 
         labelDatos.setText("Datos Cliente");
 
@@ -215,13 +214,6 @@ public class VentanaRegistrarCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        btnAtras.setText("Regresar");
-        btnAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -268,16 +260,12 @@ public class VentanaRegistrarCliente extends javax.swing.JInternalFrame {
                                     .addComponent(cbxTipo, 0, 122, Short.MAX_VALUE)
                                     .addComponent(txtFormattedNumero)
                                     .addComponent(cbxOperadora, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 30, Short.MAX_VALUE))
                             .addComponent(txtFormattedNumeroCasa))))
-                .addGap(187, 187, 187))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAtras)
-                .addContainerGap())
+                .addGap(70, 70, 70))
             .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128)
+                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -325,11 +313,9 @@ public class VentanaRegistrarCliente extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelDireccionNumero)
                     .addComponent(txtFormattedNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(btnAtras)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -400,11 +386,6 @@ public class VentanaRegistrarCliente extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_btnCrearActionPerformed
-
-    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        this.hide();
-        limpiar();
-    }//GEN-LAST:event_btnAtrasActionPerformed
     public void limpiar() {
         txtNombre.setText("");
         txtApellido.setText("");
@@ -418,7 +399,6 @@ public class VentanaRegistrarCliente extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCrear;
     private javax.swing.JComboBox<String> cbxOperadora;
     private javax.swing.JComboBox<String> cbxTipo;

@@ -76,7 +76,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuIdiomas">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Idiomas"/>
+            <Property name="text" type="java.lang.String" value="Idioma"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemIdiomasEspa&#xf1;ol">
@@ -123,7 +123,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane" alignment="0" pref="845" max="32767" attributes="0"/>
+          <Component id="desktopPane" alignment="0" pref="1107" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">

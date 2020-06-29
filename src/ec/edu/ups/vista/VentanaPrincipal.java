@@ -249,7 +249,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         menuBar.add(menuListar);
 
-        menuIdiomas.setText("Idiomas");
+        menuIdiomas.setText("Idioma");
 
         menuItemIdiomasEspañol.setText("Español");
         menuItemIdiomasEspañol.addActionListener(new java.awt.event.ActionListener() {
@@ -275,7 +275,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 845, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1107, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
