@@ -1,6 +1,62 @@
 # Practica-de-Laboratorio-05-Gestion-de-Tickets-Parqueadero-
 En este repositorio se subirá la práctica 05 referente a le gestión de un parqueadero y su ingreso y salida de tickets
 1. Crear un repositorio en GitHub con el nombre “Práctica de laboratorio 05: Gestión de Tickets (Parqueadero)”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![alt text]()
 Desarrollar una aplicación que permita la gestión de Tickets de un parqueadero de vehículos según los requerimientos
 planteados en las instrucciones de la práctica.
